@@ -1,0 +1,24 @@
+account_id: ""
+actions:
+  anhagape/mintnft0-1:
+    runtime: v1
+    sources: actions
+    specs:
+      mint:
+        description: Replicates a transaction.
+        function: mint:mintFunction
+        trigger:
+          type: transaction
+          transaction:
+            status:
+              - MINED
+            filters:
+              - network: 1  # mainnet
+                from:
+                    - 0xA6684174563732839338E88A77C1f49fAE69DCb7 # Wallet1
+                    - 0x1399a4e68d94918025096fcafa1e36059fb10f1e # anhagape
+                logEmitted:  # token transfer
+                  startsWith:
+                    - 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                    - 0x0000000000000000000000000000000000000000000000000000000000000000
+project_slug: ""
